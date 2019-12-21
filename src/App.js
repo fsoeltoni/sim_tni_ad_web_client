@@ -7,9 +7,11 @@ import pangkat from "./resources/pangkat";
 import kecabangan from "./resources/kecabangan";
 import korps from "./resources/korps";
 import provinsi from "./resources/provinsi";
+import jenis_kota_kabupaten from "./resources/jenis_kota_kabupaten";
 
 const App = () => (
   <Admin title={attrs.title} dataProvider={data}>
+    <Resource {...jenis_kota_kabupaten.identities} />
     <Resource {...provinsi.identities} />
     <Resource {...korps.identities} />
     <Resource {...kecabangan.identities} />
