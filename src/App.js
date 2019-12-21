@@ -12,9 +12,11 @@ import kota_kabupaten from "./resources/kota_kabupaten";
 import golongan_darah from "./resources/golongan_darah";
 import jenis_personel from "./resources/jenis_personel";
 import golongan_sim from "./resources/golongan_sim";
+import jenis_pengajuan_sim from "./resources/jenis_pengajuan_sim";
 
 const App = () => (
   <Admin title={attrs.title} dataProvider={data}>
+    <Resource {...jenis_pengajuan_sim.identities} />
     <Resource {...golongan_sim.identities} />
     <Resource {...jenis_personel.identities} />
     <Resource {...golongan_darah.identities} />
