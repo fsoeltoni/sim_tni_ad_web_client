@@ -2,75 +2,46 @@ import React from "react";
 import {
   Create,
   SimpleForm,
-  ReferenceInput,
-  SelectInput,
   TextInput,
   Edit,
   List,
   Datagrid,
-  ReferenceField,
   TextField,
   EditButton,
   DeleteButton
 } from "react-admin";
-import kecabangan from "../kecabangan";
 
 const fields = {
   id: {
     source: "id",
     label: "Id"
   },
-  kecabangan: {
-    source: kecabangan.identities.name + "_id",
-    label: kecabangan.identities.label,
-    reference: kecabangan.identities.name,
-    sort: {
-      field: kecabangan.fields.id.source,
-      order: "ASC"
-    }
-  },
   nama: {
     source: "nama",
     label: "Nama"
-  },
-  kode: {
-    source: "kode",
-    label: "Kode"
   }
 };
 
-const KorpsCreate = props => (
+const GolonganDarahCreate = props => (
   <Create {...props} {...components.create}>
     <SimpleForm variant="outlined" redirect="list">
-      <ReferenceInput {...fields.kecabangan}>
-        <SelectInput optionText={kecabangan.fields.kode.source} />
-      </ReferenceInput>
       <TextInput {...fields.nama} />
-      <TextInput {...fields.kode} />
     </SimpleForm>
   </Create>
 );
 
-const KorpsEdit = props => (
+const GolonganDarahEdit = props => (
   <Edit {...props} {...components.edit}>
     <SimpleForm variant="outlined">
-      <ReferenceInput {...fields.kecabangan}>
-        <SelectInput optionText={kecabangan.fields.kode.source} />
-      </ReferenceInput>
       <TextInput {...fields.nama} />
-      <TextInput {...fields.kode} />
     </SimpleForm>
   </Edit>
 );
 
-const KorpsList = props => (
+const GolonganDarahList = props => (
   <List {...props} {...components.list}>
     <Datagrid>
-      <ReferenceField {...fields.kecabangan}>
-        <TextField source={kecabangan.fields.kode.source} />
-      </ReferenceField>
       <TextField {...fields.nama} />
-      <TextField {...fields.kode} />
       <EditButton />
       <DeleteButton />
     </Datagrid>
@@ -78,13 +49,13 @@ const KorpsList = props => (
 );
 
 const identities = {
-  name: "korps",
+  name: "golongan_darah",
   options: {
-    label: "Korps"
+    label: "Golongan Darah"
   },
-  create: KorpsCreate,
-  edit: KorpsEdit,
-  list: KorpsList
+  create: GolonganDarahCreate,
+  edit: GolonganDarahEdit,
+  list: GolonganDarahList
 };
 
 const components = {
