@@ -10,9 +10,11 @@ import provinsi from "./resources/provinsi";
 import jenis_kota_kabupaten from "./resources/jenis_kota_kabupaten";
 import kota_kabupaten from "./resources/kota_kabupaten";
 import golongan_darah from "./resources/golongan_darah";
+import jenis_personel from "./resources/jenis_personel";
 
 const App = () => (
   <Admin title={attrs.title} dataProvider={data}>
+    <Resource {...jenis_personel.identities} />
     <Resource {...golongan_darah.identities} />
     <Resource {...kota_kabupaten.identities} />
     <Resource {...jenis_kota_kabupaten.identities} />
